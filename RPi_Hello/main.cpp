@@ -17,21 +17,42 @@
  */
 
 #include <iostream>
-#include <wiringPi.h>
+#include <unistd.h>
+#include <sstream>
+
 #include "GPIO.h"
 
 using namespace std;
 
-int main (void) {
+/**
+ * @brief Main function
+ * @retval 0 Program ended successfully
+ */
+int main(int argc, char* argv[]) {
 
   cout << "Hello world!!!" << endl;
 
-  GPIO led(0, GPIO::DIR_OUTPUT);
+  const int delayTime = 500*1000;
+
+  int pinNumber;
+
+  if (argc != 2) {
+    cout << "Error: Wrong number of parameters" << endl;
+    cout << "Usage: " << argv[0] << " pinNumber" << endl;
+    return 1;
+  }
+
+  string s(argv[1]);
+  istringstream sstr(s);
+  sstr >> pinNumber;
+  cout << "Got pin number " << pinNumber << endl;
+
+  GPIO led(pinNumber, GPIO::DIR_OUTPUT);
 
   while (1) {
     led.toggle();
     cout << "Pin value: " << led.read() << endl;
-    delay(500);
+    usleep(delayTime); // sleep given number of microseconds
   }
   return 0;
 }

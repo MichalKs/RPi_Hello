@@ -1,6 +1,6 @@
 /**
  * @file    GPIO.h
- * @brief	  
+ * @brief	  GPIO pin class
  * @date    27 gru 2014
  * @author  Michal Ksiezopolski
  *
@@ -18,7 +18,7 @@
 #ifndef GPIO_H_
 #define GPIO_H_
 
-#include "wiringPi.h"
+#include "wiringPi.h" // for low level GPIO access
 
 /**
  * @brief Class for GPIO pin

@@ -1,6 +1,6 @@
 /**
  * @file    GPIO.cpp
- * @brief	  
+ * @brief	  GPIO pin class
  * @date    27 gru 2014
  * @author  Michal Ksiezopolski
  *
@@ -17,13 +17,18 @@
  */
 #include "GPIO.h"
 
-int GPIO::initialized =0;
+int GPIO::initialized = 0; ///< Is low level library initialized
 
-
+/**
+ * @brief Constructor for GPIO pin
+ * @param pin Pin number (pin numbers as per BCM numbering scheme)
+ * @param dir Pin direction
+ */
 GPIO::GPIO(int pin, pinDirection dir) {
 
+  // initialize library only once at start of program
   if (!initialized) {
-    wiringPiSetup();
+    wiringPiSetupGpio();
     initialized = 1;
   }
   pinNumber = pin;
@@ -32,20 +37,30 @@ GPIO::GPIO(int pin, pinDirection dir) {
   pinMode(pinNumber, direction);
 
 }
-
-GPIO::~GPIO() {
+/**
+ * @brief Destructor (sets pin as input)
+ */
+GPIO::~GPIO(void) {
   pinMode(pinNumber, DIR_INPUT);
 }
-
+/**
+ * @brief Toggle pin value
+ */
 void GPIO::toggle(void) {
-  int pinValue = digitalRead(pinNumber);
+  int pinValue = read();
   set(!pinValue);
 }
-
+/**
+ * @brief Read pin value
+ * @return Value of pin (0 or 1)
+ */
 int GPIO::read(void) {
   return digitalRead(pinNumber);
 }
-
+/**
+ * @brief Set pin value
+ * @param newState New pin value
+ */
 void GPIO::set(int newState) {
   digitalWrite(pinNumber, newState);
 }
