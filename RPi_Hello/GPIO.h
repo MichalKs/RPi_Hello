@@ -40,7 +40,7 @@ public:
   void set(int newState);
 
 private:
-  static int initialized;
+  static bool initialized;
 
   int pinNumber;
   int direction;

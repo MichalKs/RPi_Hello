@@ -17,8 +17,8 @@
 				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.debug.1649242380" name="Debug" parent="cdt.managedbuild.config.gnu.cross.exe.debug">
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1649242380." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.1334982736" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
-							<option id="cdt.managedbuild.option.gnu.cross.prefix.538938833" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="arm-linux-gnueabihf-" valueType="string"/>
-							<option id="cdt.managedbuild.option.gnu.cross.path.999543950" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value="/home/mik/Programs/rpi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.prefix.538938833" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" useByScannerDiscovery="false" value="arm-linux-gnueabihf-" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.path.999543950" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" useByScannerDiscovery="false" value="/home/mik/rpi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.791726639" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
 							<builder buildPath="${workspace_loc:/RPi_Hello}/Debug" id="cdt.managedbuild.builder.gnu.cross.1316297859" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross">
 								<outputEntries>
@@ -30,7 +30,7 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.605078702" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.debugging.level.37572275" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.363550243" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/inc"/>
+									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1514064459" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -38,17 +38,17 @@
 								<option id="gnu.cpp.compiler.option.optimization.level.1616535679" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.781181342" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1140201385" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/inc"/>
+									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.805423552" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1803594105" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.226041001" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
-								<option id="gnu.cpp.link.option.libs.425550973" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+								<option id="gnu.cpp.link.option.libs.425550973" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="wiringPi"/>
 								</option>
-								<option id="gnu.cpp.link.option.paths.796451411" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/lib"/>
+								<option id="gnu.cpp.link.option.paths.796451411" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="../external_libs/wiringPi/lib"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1942285199" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -57,8 +57,8 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1442416123" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.376371269" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
-								<option id="gnu.both.asm.option.include.paths.1854778354" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/inc"/>
+								<option id="gnu.both.asm.option.include.paths.1854778354" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1948659623" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -98,6 +98,7 @@
 									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/wiringPi/wiringPi"/>
 									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/inc"/>
 									<listOptionValue builtIn="false" value="../wiringPi"/>
+									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1779165646" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -108,6 +109,7 @@
 									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/wiringPi/wiringPi"/>
 									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/inc"/>
 									<listOptionValue builtIn="false" value="../wiringPi"/>
+									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1610924126" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -134,6 +136,7 @@
 									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/wiringPi/wiringPi"/>
 									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/inc"/>
 									<listOptionValue builtIn="false" value="../wiringPi"/>
+									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1798229457" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>

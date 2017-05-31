@@ -17,7 +17,7 @@
  */
 #include "GPIO.h"
 
-int GPIO::initialized = 0; ///< Is low level library initialized
+bool GPIO::initialized = false; ///< Is low level library initialized
 
 /**
  * @brief Constructor for GPIO pin
@@ -29,7 +29,7 @@ GPIO::GPIO(int pin, pinDirection dir) {
   // initialize library only once at start of program
   if (!initialized) {
     wiringPiSetupGpio();
-    initialized = 1;
+    initialized = true;
   }
   pinNumber = pin;
   direction = dir;

@@ -17,9 +17,6 @@
  */
 
 #include <iostream>
-#include <unistd.h>
-#include <sstream>
-
 #include "GPIO.h"
 
 using namespace std;
@@ -28,31 +25,18 @@ using namespace std;
  * @brief Main function
  * @retval 0 Program ended successfully
  */
-int main(int argc, char* argv[]) {
+int main(int argc, char * argv[]) {
 
   cout << "Hello world!!!" << endl;
 
-  const int delayTime = 500*1000;
-
-  int pinNumber;
-
-  if (argc != 2) {
-    cout << "Error: Wrong number of parameters" << endl;
-    cout << "Usage: " << argv[0] << " pinNumber" << endl;
-    return 1;
-  }
-
-  string s(argv[1]);
-  istringstream sstr(s);
-  sstr >> pinNumber;
-  cout << "Got pin number " << pinNumber << endl;
-
+  const int delayTimeMillis = 500*1000;
+  int pinNumber = 17;
   GPIO led(pinNumber, GPIO::DIR_OUTPUT);
 
-  while (1) {
+  while (true) {
     led.toggle();
     cout << "Pin value: " << led.read() << endl;
-    usleep(delayTime); // sleep given number of microseconds
+    usleep(delayTimeMillis); // sleep given number of microseconds
   }
   return 0;
 }
