@@ -17,8 +17,8 @@
  */
 
 #include <iostream>
-#include <unistd.h>
 #include "Gpio/Gpio.h"
+#include "Utils/Utils.h"
 
 using namespace std;
 
@@ -29,14 +29,14 @@ using namespace std;
 int main(int argc, char * argv[]) {
 
   cout << "Hello world!!!" << endl;
-  const int DELAY_TIME_MILLIS = 500*1000;
+  const int DELAY_TIME_MILLIS = 500;
   const int LED_PIN_NUMBER = 17;
   Gpio * led = new Gpio(LED_PIN_NUMBER, Gpio::DIRECTION_OUTPUT);
 
   while (true) {
     led->toggle();
     cout << "Pin value: " << led->read() << endl;
-    usleep(DELAY_TIME_MILLIS);
+    Utils::delayMillis(DELAY_TIME_MILLIS);
   }
   return 0;
 }

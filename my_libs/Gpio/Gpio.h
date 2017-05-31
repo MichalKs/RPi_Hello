@@ -29,10 +29,29 @@ public:
     DIRECTION_OUTPUT = 1,
   };
 
+  /**
+   * @brief Constructor for GPIO pin
+   * @param pinNumber Pin number (pin numbers as per BCM numbering scheme)
+   * @param pinDirection Pin direction
+   */
   Gpio(int pinNumber, PinDirection pinDirection);
+  /**
+   * @brief Destructor (sets pin as input)
+   */
   virtual ~Gpio();
+  /**
+   * @brief Toggle pin value
+   */
   void toggle();
+  /**
+   * @brief Read pin value
+   * @return Value of pin (true or false)
+   */
   bool read();
+  /**
+   * @brief Set pin value
+   * @param newState New pin value
+   */
   void set(bool newState);
 
 private:
