@@ -31,6 +31,7 @@
 								<option id="gnu.c.compiler.option.debugging.level.37572275" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.363550243" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
+									<listOptionValue builtIn="false" value="../my_libs"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1514064459" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -39,6 +40,7 @@
 								<option id="gnu.cpp.compiler.option.debugging.level.781181342" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1140201385" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
+									<listOptionValue builtIn="false" value="../my_libs"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.805423552" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -59,13 +61,15 @@
 							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.376371269" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
 								<option id="gnu.both.asm.option.include.paths.1854778354" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
+									<listOptionValue builtIn="false" value="../my_libs"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1948659623" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="wiringPi" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="my_libs|wiringPi" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="my_libs"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -99,6 +103,7 @@
 									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/inc"/>
 									<listOptionValue builtIn="false" value="../wiringPi"/>
 									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
+									<listOptionValue builtIn="false" value="../my_libs/Gpio"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1779165646" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -110,6 +115,7 @@
 									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/inc"/>
 									<listOptionValue builtIn="false" value="../wiringPi"/>
 									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
+									<listOptionValue builtIn="false" value="../my_libs/Gpio"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1610924126" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -137,11 +143,16 @@
 									<listOptionValue builtIn="false" value="/home/mik/Source/rpi/inc"/>
 									<listOptionValue builtIn="false" value="../wiringPi"/>
 									<listOptionValue builtIn="false" value="../external_libs/wiringPi/inc"/>
+									<listOptionValue builtIn="false" value="../my_libs/Gpio"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1798229457" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<sourceEntries>
+						<entry excluding="my_libs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="my_libs"/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>

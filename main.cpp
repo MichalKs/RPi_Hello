@@ -17,7 +17,8 @@
  */
 
 #include <iostream>
-#include "GPIO.h"
+#include <unistd.h>
+#include "Gpio/Gpio.h"
 
 using namespace std;
 
@@ -28,15 +29,14 @@ using namespace std;
 int main(int argc, char * argv[]) {
 
   cout << "Hello world!!!" << endl;
-
-  const int delayTimeMillis = 500*1000;
-  int pinNumber = 17;
-  GPIO led(pinNumber, GPIO::DIR_OUTPUT);
+  const int DELAY_TIME_MILLIS = 500*1000;
+  const int LED_PIN_NUMBER = 17;
+  Gpio * led = new Gpio(LED_PIN_NUMBER, Gpio::DIRECTION_OUTPUT);
 
   while (true) {
-    led.toggle();
-    cout << "Pin value: " << led.read() << endl;
-    usleep(delayTimeMillis); // sleep given number of microseconds
+    led->toggle();
+    cout << "Pin value: " << led->read() << endl;
+    usleep(DELAY_TIME_MILLIS);
   }
   return 0;
 }

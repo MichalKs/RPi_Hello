@@ -18,32 +18,27 @@
 #ifndef GPIO_H_
 #define GPIO_H_
 
-#include "wiringPi.h" // for low level GPIO access
-
 /**
  * @brief Class for GPIO pin
  */
-class GPIO {
+class Gpio {
 
 public:
-
-  enum pinDirection {
-    DIR_INPUT = 0,
-    DIR_OUTPUT = 1
+  enum PinDirection {
+    DIRECTION_INPUT = 0,
+    DIRECTION_OUTPUT = 1,
   };
 
-  GPIO(int pin, pinDirection dir);
-  virtual ~GPIO();
-
-  void toggle(void);
-  int read(void);
-  void set(int newState);
+  Gpio(int pinNumber, PinDirection pinDirection);
+  virtual ~Gpio();
+  void toggle();
+  bool read();
+  void set(bool newState);
 
 private:
-  static bool initialized;
-
-  int pinNumber;
-  int direction;
+  static bool initialized;    ///< Is low level library initialized
+  int pinNumber;              ///< Pin number
+  PinDirection pinDirection;  ///< Pin direction
 };
 
 #endif /* GPIO_H_ */

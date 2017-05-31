@@ -15,38 +15,37 @@
  * http://www.gnu.org/licenses/gpl.html
  * @endverbatim
  */
-#include "GPIO.h"
 
-bool GPIO::initialized = false; ///< Is low level library initialized
+#include "Gpio.h"
+#include "wiringPi.h"
+
+bool Gpio::initialized = false;
 
 /**
  * @brief Constructor for GPIO pin
- * @param pin Pin number (pin numbers as per BCM numbering scheme)
- * @param dir Pin direction
+ * @param pinNumber Pin number (pin numbers as per BCM numbering scheme)
+ * @param pinDirection Pin direction
  */
-GPIO::GPIO(int pin, pinDirection dir) {
-
+Gpio::Gpio(int pinNumber, PinDirection pinDirection) {
   // initialize library only once at start of program
   if (!initialized) {
     wiringPiSetupGpio();
     initialized = true;
   }
-  pinNumber = pin;
-  direction = dir;
-
-  pinMode(pinNumber, direction);
-
+  this->pinNumber = pinNumber;
+  this->pinDirection = pinDirection;
+  pinMode(pinNumber, pinDirection);
 }
 /**
  * @brief Destructor (sets pin as input)
  */
-GPIO::~GPIO(void) {
-  pinMode(pinNumber, DIR_INPUT);
+Gpio::~Gpio() {
+  pinMode(pinNumber, DIRECTION_INPUT);
 }
 /**
  * @brief Toggle pin value
  */
-void GPIO::toggle(void) {
+void Gpio::toggle() {
   int pinValue = read();
   set(!pinValue);
 }
@@ -54,13 +53,13 @@ void GPIO::toggle(void) {
  * @brief Read pin value
  * @return Value of pin (0 or 1)
  */
-int GPIO::read(void) {
+bool Gpio::read() {
   return digitalRead(pinNumber);
 }
 /**
  * @brief Set pin value
  * @param newState New pin value
  */
-void GPIO::set(int newState) {
+void Gpio::set(bool newState) {
   digitalWrite(pinNumber, newState);
 }
